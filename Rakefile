@@ -6,6 +6,8 @@ task :publish do
   system 'bundle exec s3_website push'
 end
 
+task release: :publish
+
 desc "Create new post for this week"
 task :post, [:title] do |t, args|
   date = Date.today.strftime('%Y-%m-%d')
